@@ -30,8 +30,24 @@ $(document).ready(function(){
                     alert("Could not log in.");
                 } else {
                     console.log("Logged in as", res);
+                    window.location.href = "/";
                 }
             }
         })
-    })
+    });
+
+    $(document).on('click', '#Logout-Link', function(e){
+        e.preventDefault();
+        $.ajax({
+            url: '/logout',
+            type: 'GET',
+            success: function (res) {
+                if (res == 'success'){
+                    window.location.href = '/login';
+                } else {
+                    alert("Something went wrong.");
+                }
+            }
+        })
+    });
 });

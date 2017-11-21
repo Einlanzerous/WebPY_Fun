@@ -1,3 +1,8 @@
-<h1>
-    Hello WebPY Fun!
-</h1>
+<div class="container">
+    <h1>
+        $if session['user'] == None:
+            Welcome Guest
+        $else:
+            Welcome $session['user']['username']
+    </h1>
+</div>
